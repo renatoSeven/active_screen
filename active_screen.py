@@ -7,6 +7,7 @@ from multiprocessing import Process
 from datetime import datetime
 
 def rand_func(start,end,c_quad=0):
+    # returns random quadrant(1-4) or random number of seconds
     if c_quad == 0:
         return int(random.randint(start,end))
     else:
@@ -16,6 +17,7 @@ def rand_func(start,end,c_quad=0):
                 return rand_quad_res
 
 def rand_quadrant(width,height,c_quad):
+    # generate random coordenates on randomly generated screen quandrant
     screen_quad = {
         1:[(10,int(width/2)),(10,int(height/2))],
         2:[(int(width/2),width - 10),(10,int(height/2))],
@@ -29,6 +31,7 @@ def rand_quadrant(width,height,c_quad):
     return int(random.randint(w_start,w_end)),int(random.randint(h_start,h_end))
 
 def prog_start_test(width, height):
+    # run preliminary tests of screen size
     print(f'[{str(datetime.now())}]Testing screen:')
     time_sleep = .5
     pyautogui.moveTo(int(width / 2), int(height / 2), time_sleep)
@@ -47,11 +50,13 @@ def prog_start_test(width, height):
     time.sleep(2)
 
 def count_down(countdown_time):
+    # generate animated countdown timer 
     for i in range(countdown_time, 0, -1):
         print(f'Sleeping... |{str('_' * (i - 1))} <{i}sec> ', end = ' \r')
         time.sleep(.99)
 
 def move_mouse():
+    # loop that performs motion/right click/escape actions
     print(f'[{str(datetime.now())}] Move mouse started')
     time.sleep(5)
     width, height = pyautogui.size()
@@ -101,6 +106,7 @@ def move_mouse():
             pass
 
 def kb_ctrl_send():
+    # loop to notify user were the mouse cursor is
     print(f'[{str(datetime.now())}] Mouse locator started')
     while True:
         pyautogui.press('ctrl')
@@ -109,6 +115,7 @@ def kb_ctrl_send():
         time.sleep(5)
 
 def proc_manager(proc_name):
+    # starts proccesses based on name
     if proc_name == 'mouse1':
         move_mouse()
     else:
