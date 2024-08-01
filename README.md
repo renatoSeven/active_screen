@@ -1,4 +1,4 @@
-![alt text](http://url/to/img.png)
+![alt text](https://raw.githubusercontent.com/renatoSeven/active_screen/main/screenshot.JPG)
 
 # active_screen
 Script maintains screen active indefinitely or number of minutes
