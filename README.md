@@ -8,6 +8,7 @@ Script maintains screen active indefinitely or number of minutes
  - Prevent screen lock
 
 # usage
+ - python3
 ## infinite running:
  - /path/to/python /path/to/script/active_screen.py
 ## run for an amount of minutes
