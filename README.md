@@ -2,7 +2,7 @@
 Script maintains screen active indefinitely or number of minutes
 
 # Purspose
-## Prevent screen lock
+ - Prevent screen lock
 
 # Usage
 ## Infinite running:
